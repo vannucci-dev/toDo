@@ -1,0 +1,58 @@
+* {
+  text-align: center;
+}
+
+h1 {
+  font-family: "Comfortaa", cursive;
+  font-size: 60px;
+}
+
+p {
+  font-family: "Amatic SC", cursive;
+  font-size: 40px;
+  display: inline;
+}
+
+.toDoContainer {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  font-family: "Amatic SC", cursive;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.delete {
+  font-size: 20px;
+}
+.filter {
+  font-size: 40px;
+}
+
+.active {
+  text-decoration: line-through;
+}
+
+input[type="text"] {
+  padding: 5px 10px;
+  width: 40%;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-family: "Amatic SC", cursive;
+  font-size: 30px;
+}
+
+input[type="text"]:focus {
+  border-color: #333;
+  outline: 0;
+}

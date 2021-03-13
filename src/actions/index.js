@@ -11,14 +11,14 @@ export const addToDo = (toDo) => {
   };
 };
 
-export const removeTodo = (toDo) => {
+export const removeToDo = (toDo) => {
   return {
     type: "currentToDos/removeTodo",
     payload: toDo,
   };
 };
 
-export const toggleTodo = (toDo) => {
+export const toggleToDo = (toDo) => {
   return {
     type: "currentToDos/toggleComplete",
     payload: toDo,

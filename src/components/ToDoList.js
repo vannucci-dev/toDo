@@ -1,19 +1,28 @@
 import React from "react";
-import ToDo from "./ToDo";
-
-import { toggleTodo } from "../actions";
+import "./app.css";
+import { toggleToDo, removeToDo } from "../actions";
 
 import { connect } from "react-redux";
 
 class ToDoList extends React.Component {
   renderToDos() {
-    return this.props.currentToDos.map((toDo) => {
-      return (
-        <div key={toDo.id}>
-          <p onClick={() => this.props.toggleTodo(toDo)}>{toDo.content}</p>X
-        </div>
-      );
-    });
+    return this.props.currentToDos
+      .filter((filteredToDo) => {
+        return filteredToDo.complete === this.props.activeFilter;
+      })
+      .map((toDo) => {
+        return (
+          <div className="toDoContainer" key={toDo.id}>
+            <p onClick={() => this.props.toggleToDo(toDo)}>{toDo.content} - </p>
+            <button
+              className="button delete"
+              onClick={() => this.props.removeToDo(toDo)}
+            >
+              X
+            </button>
+          </div>
+        );
+      });
   }
   render() {
     return <div>{this.renderToDos()}</div>;
@@ -22,7 +31,10 @@ class ToDoList extends React.Component {
 
 const mapStateToProps = (state) => {
   console.log(state);
-  return { currentToDos: state.currentToDos };
+  return {
+    currentToDos: state.currentToDos,
+    activeFilter: state.activeFilter,
+  };
 };
 
-export default connect(mapStateToProps, { toggleTodo })(ToDoList);
+export default connect(mapStateToProps, { toggleToDo, removeToDo })(ToDoList);

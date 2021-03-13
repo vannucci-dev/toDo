@@ -9,15 +9,21 @@ const NewToDo = (props) => {
     setValue(e.target.value);
   };
 
-  const handleClick = () => {
-    props.addToDo(value);
-    setValue("");
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      props.addToDo(value);
+      setValue("");
+    }
   };
 
   return (
     <div>
-      <input type="text" value={value} onChange={handleChange} />
-      <button onClick={handleClick}>+</button>
+      <input
+        type="text"
+        value={value}
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
+      />
     </div>
   );
 };

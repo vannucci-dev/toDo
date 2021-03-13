@@ -3,6 +3,8 @@ import ToDoList from "./ToDoList";
 import FilterBar from "./FilterBar";
 import NewToDo from "./NewToDo";
 
+import "./app.css";
+
 const App = () => {
   return (
     <div>
