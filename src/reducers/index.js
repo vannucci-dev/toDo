@@ -24,9 +24,9 @@ const currentToDosListReducer = (current = [], action) => {
 const filteredToDosReducer = (state = "pending", action) => {
   switch (action.type) {
     case "activeFilter/selectCompleted":
-      return state.completedToDos;
+      return action.payload;
     case "activeFilter/selectPending":
-      return state.currentToDos;
+      return action.payload;
     default:
       return state;
   }

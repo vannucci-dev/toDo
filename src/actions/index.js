@@ -28,11 +28,13 @@ export const toggleTodo = (toDo) => {
 export const filterComplete = () => {
   return {
     type: "activeFilter/selectCompleted",
+    payload: "complete",
   };
 };
 
 export const filterPending = () => {
   return {
     type: "activeFilter/selectPending",
+    payload: "pending",
   };
 };
